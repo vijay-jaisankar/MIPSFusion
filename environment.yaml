@@ -70,9 +70,9 @@ dependencies:
     - six==1.16.0
     - tabulate==0.9.0
     - termcolor==2.3.0
-    - torch==1.13.1+cu116
-    - torchaudio==0.13.1+cu116
-    - torchvision==0.14.1+cu116
+    - torch==1.13.1
+    - torchaudio==0.13.1
+    - torchvision==0.14.1
     - tornado==6.2
     - traitlets==5.9.0
     - trimesh==3.22.1
