@@ -83,4 +83,4 @@ dependencies:
     - wcwidth==0.2.6
     - widgetsnbextension==4.0.8
     - yacs==0.1.8
-prefix: /home/javens/anaconda3/envs/MIPSFusion
+prefix: /home/vijay/miniconda3/envs/
