@@ -10,6 +10,10 @@
 
 #define VOXELSIZE 1.0f
 
+// Attempt fix of `numeric_limits`
+// @ref https://github.com/gpujs/gpu.js/issues/753
+#include <limits>
+
 struct vec3f {
 	vec3f() {
 		x = 0.0f;
