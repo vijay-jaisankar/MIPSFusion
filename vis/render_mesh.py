@@ -7,6 +7,8 @@ import argparse
 from mipsfusion import MIPSFusion
 from model.scene_rep import JointEncoding
 
+import numpy as np
+np.bool = bool
 
 def fill_members(slam, kfSet, tensor_dict):
     slam.kf_c2w = tensor_dict["kf_c2w"]
