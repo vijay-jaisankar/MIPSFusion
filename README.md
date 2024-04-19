@@ -8,12 +8,20 @@ MIPSFusion is a neural RGB-D SLAM method based on multi-implicit submap represen
 
 
 ## Installation
-We recommend to creat an annacoda environment from [environment.yaml](environment.yaml)
+We recommend to create an Anaconda environment from [environment.yaml](environment.yaml).
 ```
 conda env create -f environment.yaml
 conda activate MIPSFusion
 ```
-If [pypose](https://github.com/pypose/pypose) or [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) is not installed successfully, please try to follow their official installing instructions.
+
+&#x1F6A8; Before creating the new enviroment, please ensure that the `prefix` parameter in `environment.yaml` is set correctly.  
+
+If [pypose](https://github.com/pypose/pypose) or [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) is not installed successfully, please try to follow their official installation instructions. In this case, please remove the corresponding dependencies from `environment.yaml`, create an Anaconda environment with the resultant reduced dependencies, activate it, and then install the remaining dependencies inside this environment.
+
+&#x1F6A8; There could be situations where `tiny-cuda-nn` is installed successfully but importing the library still throws an error, please ensure the robustness of your `tiny-cuda-nn` installation by running the following import in a Python shell inside your Anaconda environment:
+```
+>>> import tinycudann as tcnn
+``` 
 
 Build other external dependencies
 ```
@@ -30,13 +38,13 @@ For example:
 ```
 python main.py --config configs/FastCaMo-synth/apartment_2.yaml
 ```
-&#x1F6A8; Beforing running, please make sure that `data/datadir` in `{config_file}`(the directory storing the data of this sequence) is set correctly.
+&#x1F6A8; Beforing running, please make sure that `data/datadir` in `{config_file}` (the directory storing the data of this sequence) is set correctly.
 
 &#x27A1; The result will be saved to `{result_path}=output/{dataset_name}/{sequence_name}/0` by default. For example: `output/FastCaMo-synth/apartment_2/0`.
 
 
 ## Visualization
-To get reconstructd triangle mesh of the scene, an extra step (joint marching cubes) should be taken. You can run
+To get reconstructed triangle mesh of the scene, an extra step (joint marching cubes) should be taken. You can run
 ```
 python vis/render_mesh.py --config {config_file} --seq_result {result_path} --ckpt {ckpt_id}
 ```
